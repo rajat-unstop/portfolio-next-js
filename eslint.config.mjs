@@ -13,7 +13,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    "commitlint.config.ts"
+    "commitlint.config.ts",
+    "prettier.config.mjs"
   ]),
   {
     files: ['**/*.{ts,tsx}'],

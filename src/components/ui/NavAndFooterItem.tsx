@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { ReactNode } from 'react';
 
-type BorderPosition = "left" | "right";
+type BorderPosition = 'left' | 'right';
 
 interface NavandFooterItemProps {
   title: string | ReactNode;
   url: string;
   borderPosition: BorderPosition;
   classes?: string;
-  isFooterItem?: boolean
+  isFooterItem?: boolean;
 }
 
 const NavAndFooterItems = ({
@@ -19,17 +19,15 @@ const NavAndFooterItems = ({
   url,
   classes,
   borderPosition,
-  isFooterItem = false
+  isFooterItem = false,
 }: NavandFooterItemProps) => {
+  const pathname = usePathname();
 
-  const pathname = usePathname()
+  const borderClass =
+    borderPosition === 'right' ? 'border-r border-r-slate-500' : 'border-l border-l-slate-500';
+  const baseClasses = 'flex items-center px-5 h-full pointer transition-colors duration-300';
+  const activeClass = 'border-b-2 border-amber-500';
 
-  console.log({pathname})
-
-  const borderClass = borderPosition === 'right' ? 'border-r border-r-slate-500' : 'border-l border-l-slate-500';
-  const baseClasses = "flex items-center px-5 h-full pointer transition-colors duration-300";
-  const activeClass = 'border-b-2 border-amber-500'
-  
   return (
     <Link
       href={url}
@@ -37,7 +35,6 @@ const NavAndFooterItems = ({
       target={isFooterItem ? '_blank' : '_self'}
     >
       {title}
-      
     </Link>
   );
 };

@@ -1,0 +1,6 @@
+.right {
+  background-image: url('../../../../public/background_blurs.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

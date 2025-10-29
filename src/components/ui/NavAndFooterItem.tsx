@@ -25,8 +25,9 @@ const NavAndFooterItems = ({
 
   const borderClass =
     borderPosition === 'right' ? 'border-r border-r-slate-500' : 'border-l border-l-slate-500';
-  const baseClasses = 'flex items-center px-5 h-full pointer transition-colors duration-300';
-  const activeClass = 'border-b-2 border-amber-500';
+  const baseClasses =
+    'flex items-center px-5 h-full pointer transition-colors duration-300 hover:bg-slate-700 hover:text-white';
+  const activeClass = 'border-b-2 border-amber-500 text-white';
 
   return (
     <Link

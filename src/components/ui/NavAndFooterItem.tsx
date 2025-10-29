@@ -32,7 +32,7 @@ const NavAndFooterItems = ({
   return (
     <Link
       href={url}
-      className={` ${classes || ''} ${baseClasses} ${borderClass} ${pathname === url ? activeClass : ''}`}
+      className={` ${classes || ''} ${baseClasses} ${borderClass} ${pathname.split('/').includes(url) || url === pathname ? activeClass : ''}`}
       target={isFooterItem ? '_blank' : '_self'}
     >
       {title}

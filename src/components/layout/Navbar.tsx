@@ -15,17 +15,17 @@ const Navbar = () => {
     },
     {
       title: '_about-me',
-      url: '/aboutMe',
+      url: 'aboutMe',
       borderPosition: 'right',
     },
     {
       title: '_projects',
-      url: '/projects',
+      url: 'projects',
       borderPosition: 'right',
     },
     {
       title: '_contact-me',
-      url: '/contactMe',
+      url: 'contactMe',
       borderPosition: 'left',
       classes: 'ml-auto',
     },

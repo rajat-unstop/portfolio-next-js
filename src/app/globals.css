@@ -1,7 +1,8 @@
-@import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import 'remixicon/fonts/remixicon.css';
 
 body {
-  font-family: "Fira Code", monospace;
+  font-family: 'Fira Code', monospace;
   font-optical-sizing: auto;
 }

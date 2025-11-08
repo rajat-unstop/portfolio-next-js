@@ -1,22 +1,54 @@
 'use client';
-
-import Link from 'next/link';
+import SideBarIconLink from '@/components/ui/SideBarIconLink';
+import {
+  RemixiconComponentType,
+  RiGamepadFill,
+  RiTerminalBoxFill,
+  RiUser4Fill,
+} from '@remixicon/react';
 import { usePathname } from 'next/navigation';
-import { ImOffice } from 'react-icons/im';
+
+interface SidebarItem {
+  href: string;
+  icon: RemixiconComponentType;
+  label: string;
+}
+
+const SIDEBAR_ITEMS: SidebarItem[] = [
+  {
+    href: '/aboutMe/professional',
+    icon: RiTerminalBoxFill,
+    label: 'Professional',
+  },
+  {
+    href: '/aboutMe/personal',
+    icon: RiUser4Fill,
+    label: 'Personal',
+  },
+  {
+    href: '/aboutMe/hobbies',
+    icon: RiGamepadFill,
+    label: 'Hobbies',
+  },
+];
 
 const AboutLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   return (
     <div className="flex h-full w-full">
-      <div className="side-panel w-16 h-full border-r border-r-slate-500 flex flex-col justify-start items-center py-5 gap-10">
-        <Link href={'aboutMe/proffesional'}>
-          <ImOffice color={pathname.split('/').includes('proffesional') ? 'white' : 'gray'} />
-        </Link>
-        <ImOffice color="gray" />
-        <ImOffice color="gray" />
-      </div>
-      <div className="left-panel h-full w-full">{children}</div>
+      <aside className="w-16 h-full border-r border-r-slate-500 flex flex-col justify-start items-center py-5 gap-10">
+        {SIDEBAR_ITEMS.map(item => (
+          <SideBarIconLink
+            key={item.href}
+            href={item.href}
+            icon={item.icon}
+            label={item.label}
+            isActive={pathname.includes(item.href.split('/').pop() || '')}
+          />
+        ))}
+      </aside>
+      <main className="h-full w-full">{children}</main>
     </div>
   );
 };

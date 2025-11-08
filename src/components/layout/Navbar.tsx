@@ -15,17 +15,17 @@ const Navbar = () => {
     },
     {
       title: '_about-me',
-      url: 'aboutMe',
+      url: '/aboutMe',
       borderPosition: 'right',
     },
     {
       title: '_projects',
-      url: 'projects',
+      url: '/projects',
       borderPosition: 'right',
     },
     {
       title: '_contact-me',
-      url: 'contactMe',
+      url: '/contactMe', // Fixed: added leading slash
       borderPosition: 'left',
       classes: 'ml-auto',
     },
@@ -35,7 +35,7 @@ const Navbar = () => {
     <div className="w-full h-[5%] flex items-center border-b border-slate-500 text-base text-gray-400">
       <Link
         href={'/'}
-        className="flex items-center px-5 border-r border-slate-500 h-full w-60 cursor-pointer"
+        className="flex items-center px-5 border-r border-slate-500 h-full w-70 cursor-pointer"
       >
         rajat-dash
       </Link>

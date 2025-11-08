@@ -1,11 +1,16 @@
-import React from 'react'
+'use client';
+
+import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
 
 const AboutMe = () => {
-  return (
-    <div>
-      this is about me
-    </div>
-  )
-}
+  const router = useRouter();
 
-export default AboutMe
+  useEffect(() => {
+    router.replace('/aboutMe/professional');
+  }, [router]);
+
+  return <></>;
+};
+
+export default AboutMe;

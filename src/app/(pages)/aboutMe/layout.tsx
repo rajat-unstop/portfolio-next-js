@@ -1,5 +1,6 @@
 'use client';
 import SideBarIconLink from '@/components/ui/SideBarIconLink';
+import SideBarNav from '@/components/ui/SideBarNav';
 import {
   RemixiconComponentType,
   RiGamepadFill,
@@ -37,17 +38,20 @@ const AboutLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="flex h-full w-full">
-      <aside className="w-16 h-full border-r border-r-slate-500 flex flex-col justify-start items-center py-5 gap-10">
-        {SIDEBAR_ITEMS.map(item => (
-          <SideBarIconLink
-            key={item.href}
-            href={item.href}
-            icon={item.icon}
-            label={item.label}
-            isActive={pathname.includes(item.href.split('/').pop() || '')}
-          />
-        ))}
-      </aside>
+      <div className="w-82 flex">
+        <aside className="w-16 h-full border-r border-r-slate-500 flex flex-col justify-start items-center py-5 gap-10">
+          {SIDEBAR_ITEMS.map(item => (
+            <SideBarIconLink
+              key={item.href}
+              href={item.href}
+              icon={item.icon}
+              label={item.label}
+              isActive={pathname.includes(item.href.split('/').pop() || '')}
+            />
+          ))}
+        </aside>
+        <SideBarNav />
+      </div>
       <main className="h-full w-full">{children}</main>
     </div>
   );

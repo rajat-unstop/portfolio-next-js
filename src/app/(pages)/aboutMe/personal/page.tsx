@@ -1,5 +1,5 @@
 const Personal = () => {
-  return <div>this is personal section</div>;
+  return <></>;
 };
 
 export default Personal;
